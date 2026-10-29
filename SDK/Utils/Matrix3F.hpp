@@ -17,13 +17,10 @@ class Matrix3F
 public:
     using Storage = std::array<std::array<float, DIMENSION>, DIMENSION>;
 
-    constexpr Matrix3F() :
-        values_{
-            {{1.0F, 0.0F, 0.0F},
-             {0.0F, 1.0F, 0.0F},
-             {0.0F, 0.0F, 1.0F}}
+    constexpr Matrix3F() : values_{Storage{{{1.0F, 0.0F, 0.0F}, {0.0F, 1.0F, 0.0F}, {0.0F, 0.0F, 1.0F}}}}
 
-    {}
+    {
+    }
 
     constexpr explicit Matrix3F(const Storage& values) : values_(values)
     {
