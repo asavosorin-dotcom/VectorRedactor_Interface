@@ -1,7 +1,7 @@
 #ifndef A_OBJECT_HPP
 #define A_OBJECT_HPP
 
-#include <vector>
+#include <list>
 #include <memory>
 
 #include "SDK/Utils/BoxF.hpp"
@@ -10,7 +10,7 @@
 class AObject {
 private:
     BoxF box_;
-    std::vector<std::unique_ptr<AObject>> children_;
+    std::list<std::unique_ptr<AObject>> children_;
     AObject* parent_ = nullptr;
 
 public:
@@ -24,7 +24,11 @@ public:
         return parent_;
     }
 
-    const std::vector<std::unique_ptr<AObject>>& getChildren() const {
+    const std::list<std::unique_ptr<AObject>>& getChildren() const {
+        return children_;
+    }
+
+    std::list<std::unique_ptr<AObject>>& getChildren() {
         return children_;
     }
 

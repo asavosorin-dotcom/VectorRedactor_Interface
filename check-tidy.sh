@@ -4,4 +4,4 @@
 
 COMPILER_OPTIONS="${1:-}"
 
-find -type f -and \( -name '*.hpp' -or -name '*.cpp' \) -exec clang-tidy {} -- $COMPILER_OPTIONS\;
+find -type f -and \( -name '*.hpp' -or -name '*.cpp' \) -exec clang-tidy {} -- $COMPILER_OPTIONS \;
